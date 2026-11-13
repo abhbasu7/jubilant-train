@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Count down to the next Bitcoin halving. Live block height, blocks remaining, and an estimated date with transparent sources.">
+  <title>Bitcoin Halving Countdown · iseebtc</title>
+  <link rel="icon" href="data:,">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header>
+      <a class="brand" href="./" aria-label="iseebtc home">isee<span>btc</span><span class="brand-dot">.</span></a>
+      <nav aria-label="Main navigation"><a href="./" aria-current="page">Halving</a><a href="price.html">Price &amp; technicals</a><a href="etfs.html">ETF flows</a></nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden>Dark theme</button>
+    </header>
+    <main id="main" tabindex="-1">
+      <section aria-labelledby="countdown-title">
+        <div class="intro">
+          <p class="eyebrow">THE NEXT BITCOIN HALVING</p>
+          <h1 id="countdown-title">Every block brings<br>us <span>closer.</span></h1>
+          <p class="intro-copy">At block <strong>1,050,000</strong>, Bitcoin’s block subsidy halves.<br class="desktop-break"> Follow the blocks. Watch the countdown.</p>
+        </div>
+
+        <div class="countdown-panel">
+          <div class="panel-heading">
+            <span>ESTIMATED TIME REMAINING</span>
+            <span class="feed-state" id="feed-label"><span class="status-dot" aria-hidden="true"></span><span id="feed-state">CONNECTING</span></span>
+          </div>
+          <dl class="countdown" aria-label="Estimated time until the Bitcoin halving" aria-live="off">
+            <div><dt>Days</dt><dd id="days">—</dd></div>
+            <div><dt>Hours</dt><dd id="hours">—</dd></div>
+            <div><dt>Minutes</dt><dd id="minutes">—</dd></div>
+            <div><dt>Seconds</dt><dd id="seconds">—</dd></div>
+          </dl>
+          <p class="completion" id="completion" hidden>Block 1,050,000 has been mined. This halving is complete.</p>
+          <div class="estimate-row"><span>Estimated halving date</span><strong id="estimated-date">Waiting for block data</strong></div>
+
+          <div class="epoch-progress">
+            <label for="progress">Progress through this halving cycle <span id="progress-label">—</span></label>
+            <progress id="progress" max="210000" value="0">Waiting for block data</progress>
+            <div class="progress-range"><span>840,000</span><span>1,050,000</span></div>
+          </div>
+          <dl class="block-details">
+            <div><dt>Latest block</dt><dd id="block-height">—</dd></div>
+            <div><dt>Blocks remaining</dt><dd id="blocks-remaining">—</dd></div>
+            <div><dt>Block subsidy · BTC</dt><dd class="subsidy">3.125 <span aria-label="reduces to">→</span> 1.5625</dd></div>
+          </dl>
+        </div>
+
+        <div class="source-row">
+          <p class="source-status" id="source-status" role="status">Connecting to mempool.space for the latest block…</p>
+          <button id="refresh" type="button">Refresh <span aria-hidden="true">↻</span></button>
+        </div>
+        <p class="block-time" id="block-time"></p>
+        <noscript><p class="notice">Enable JavaScript to load the latest block and countdown.</p></noscript>
+      </section>
+
+      <section class="explanation" aria-labelledby="method-title">
+        <h2 id="method-title">A schedule set in blocks.</h2>
+        <p>Bitcoin’s subsidy halves every 210,000 blocks. This estimate adds 10 minutes for each remaining block to the latest block’s timestamp. Actual block times vary, so the estimated date moves as the chain advances. The subsidy excludes transaction fees.</p>
+        <p>Block data comes from <a href="https://mempool.space/" target="_blank" rel="noreferrer">mempool.space ↗</a> and refreshes every minute while this page is visible. <a href="https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp" target="_blank" rel="noreferrer">Bitcoin Core subsidy rules ↗</a></p>
+      </section>
+    </main>
+    <footer><span>iseebtc · Bitcoin only.</span><span>For information. Estimates are subject to change.</span></footer>
+  </div>
+</body>
+</html>

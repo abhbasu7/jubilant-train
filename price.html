@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="BTC/USD candlesticks, price history, and moving averages powered by TradingView.">
+  <title>BTC Price &amp; Technicals · iseebtc</title>
+  <link rel="icon" href="data:,">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="price.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell dashboard-shell">
+    <header>
+      <a class="brand" href="./" aria-label="iseebtc home">isee<span>btc</span><span class="brand-dot">.</span></a>
+      <nav aria-label="Main navigation"><a href="./">Halving</a><a href="price.html" aria-current="page">Price &amp; technicals</a><a href="etfs.html">ETF flows</a></nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden>Dark theme</button>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="intro dashboard-intro">
+        <p class="eyebrow">BTC / USD</p>
+        <h1>Price &amp; <span>technicals.</span></h1>
+        <p class="intro-copy">Candlesticks and price history from Bitstamp, with 50- and 200-period simple moving averages. Starts on the daily interval.</p>
+      </div>
+      <section aria-label="Bitcoin price chart" class="price-panel">
+        <div id="price-chart" class="price-chart"></div>
+        <p id="chart-status" class="chart-status" role="status">Loading TradingView…</p>
+      </section>
+      <p class="source-status page-source">Chart and market data provided by <a href="https://www.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" target="_blank" rel="noreferrer">TradingView ↗</a>. Use the chart’s settings to adjust indicators and intervals.</p>
+      <noscript><p class="notice">Enable JavaScript to display the chart, or open the TradingView link above.</p></noscript>
+      <section class="explanation" aria-labelledby="price-method">
+        <h2 id="price-method">Read the trend over time.</h2>
+        <p>A simple moving average is the mean of closing prices over its selected number of bars. On a daily chart, 50 and 200 periods represent 50 and 200 days. Changing the chart interval changes what each bar represents.</p>
+        <p>Prices reflect the selected BTC/USD market. Moving averages describe historical prices and change as new bars arrive.</p>
+      </section>
+    </main>
+    <footer><span>iseebtc · Bitcoin only.</span><span>For information. Data and indicators are subject to change.</span></footer>
+  </div>
+</body>
+</html>

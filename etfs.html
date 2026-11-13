@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Daily US spot Bitcoin ETF net flows, cumulative flows, and fund breakdowns from The Commoner Bitcoin ETF Tracker by TFTC.">
+  <title>Bitcoin ETF Flows · iseebtc</title>
+  <link rel="icon" href="data:,">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="etfs.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell dashboard-shell">
+    <header>
+      <a class="brand" href="./" aria-label="iseebtc home">isee<span>btc</span><span class="brand-dot">.</span></a>
+      <nav aria-label="Main navigation"><a href="./">Halving</a><a href="price.html">Price &amp; technicals</a><a href="etfs.html" aria-current="page">ETF flows</a></nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden>Dark theme</button>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="intro dashboard-intro">
+        <p class="eyebrow">US SPOT BITCOIN ETFs</p>
+        <h1>Follow the <span>flows.</span></h1>
+        <p class="intro-copy">Daily net inflows and outflows across US spot Bitcoin funds. Data through <strong id="data-through">—</strong>.</p>
+      </div>
+      <div class="source-row etf-status-row">
+        <p id="etf-status" class="source-status" role="status">Loading TFTC’s published flow history…</p>
+        <button id="etf-refresh" type="button">Refresh <span aria-hidden="true">↻</span></button>
+      </div>
+      <dl class="metric-grid">
+        <div><dt>Latest daily net flow</dt><dd id="daily-flow">—</dd><dd id="daily-date" class="metric-date">Awaiting source data</dd></div>
+        <div><dt>Cumulative net flow</dt><dd id="cumulative-flow">—</dd><dd id="history-start" class="metric-date">Awaiting source data</dd></div>
+        <div><dt>Latest fund breakdown</dt><dd id="fund-count">—</dd><dd id="fund-date" class="metric-date">Awaiting source data</dd></div>
+      </dl>
+      <section class="data-panel" aria-labelledby="flow-history-title">
+        <div class="data-heading"><h2 id="flow-history-title">Daily net flows</h2><div class="range-controls" role="group" aria-label="Flow history range"><button data-days="30" aria-pressed="true">1M</button><button data-days="90" aria-pressed="false">3M</button><button data-days="all" aria-pressed="false">All</button></div></div>
+        <p class="chart-caption" id="daily-caption">USD · Positive values are inflows, negative values are outflows.</p>
+        <canvas id="daily-chart" class="flow-chart" role="img" aria-label="Daily ETF net flows. Exact values appear in the expandable chart data table below."></canvas>
+        <p class="chart-detail" aria-live="polite">Hover, tap, or use arrow keys on the chart for exact values.</p>
+      </section>
+      <section class="data-panel" aria-labelledby="cumulative-title">
+        <h2 id="cumulative-title">Cumulative net flows</h2>
+        <p class="chart-caption" id="cumulative-caption">Running total of the source’s published daily net flows.</p>
+        <canvas id="cumulative-chart" class="flow-chart" role="img" aria-label="Cumulative ETF net flows. Historical values appear in the expandable chart data table below."></canvas>
+        <p class="chart-detail" aria-live="polite">Hover, tap, or use arrow keys on the chart for exact values.</p>
+      </section>
+      <details class="data-panel history-details">
+        <summary>Chart data and full daily history</summary>
+        <p class="chart-caption">Daily and cumulative values cover the full source history. Amounts are in USD.</p>
+        <div class="table-scroll history-scroll" tabindex="0" role="region" aria-label="Daily and cumulative chart values">
+          <table><caption class="visually-hidden">Daily net flow and cumulative net flow</caption><thead><tr><th scope="col">Date</th><th scope="col">Daily net flow</th><th scope="col">Cumulative net flow</th></tr></thead><tbody id="history-rows"></tbody></table>
+        </div>
+      </details>
+      <div class="tables-grid">
+        <details class="data-panel history-details" open>
+          <summary>Latest fund breakdown</summary><p class="chart-caption" id="fund-note">Awaiting source data</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Fund flow table"><table><caption class="visually-hidden">Per-fund net flow for the latest available breakdown</caption><thead><tr><th scope="col">Fund</th><th scope="col">Net flow · USD</th></tr></thead><tbody id="fund-rows"></tbody></table></div>
+        </details>
+        <details class="data-panel history-details" open>
+          <summary>Recent daily flows</summary><p class="chart-caption">Latest 15 published dates · USD</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Recent daily flows table"><table><caption class="visually-hidden">Recent daily aggregate Bitcoin ETF flows</caption><thead><tr><th scope="col">Date</th><th scope="col">Net flow · USD</th></tr></thead><tbody id="recent-rows"></tbody></table></div>
+        </details>
+      </div>
+      <noscript><p class="notice">Enable JavaScript to load ETF data. You can also visit the source below.</p></noscript>
+      <section class="explanation" aria-labelledby="etf-method">
+        <h2 id="etf-method">Where these figures come from.</h2>
+        <p>Source-provided data from <a href="https://www.tftc.io/bitcoin-etf-flows" target="_blank" rel="noreferrer">The Commoner Bitcoin ETF Tracker by TFTC ↗</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>. Dates, fund reports, and daily totals follow its published dataset. Charts and cumulative figures are calculated here from that series.</p>
+        <p>Flows are reported after the US close and may be revised. Missing figures remain unavailable. Dates with no fund breakdown are labelled in the table. Fund coverage follows the source. This page checks for updates every 15 minutes while visible.</p>
+        <p><a href="https://www.tftc.io/bitcoin-etf-flows/methodology" target="_blank" rel="noreferrer">Read the source methodology and limitations ↗</a></p>
+      </section>
+    </main>
+    <footer><span>iseebtc · Bitcoin only.</span><span>For information. Flows may be revised.</span></footer>
+  </div>
+</body>
+</html>

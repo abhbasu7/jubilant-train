@@ -1,0 +1,45 @@
+# Cached feeds, review screenshots, and local handoff notes
+.cache/
+/memory/
+/git_commands.txt
+
+# Python bytecode, virtual environments, and tool caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node dependencies and generated builds
+node_modules/
+.next/
+dist/
+build/
+coverage/
+
+# Local environment files and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+.aws/
+.ssh/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Editor, operating system, and temporary files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+*.swp
+*.swo
+*~
